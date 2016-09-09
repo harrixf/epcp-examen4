@@ -1,0 +1,38 @@
+Título del proyecto:
+
+Introducción: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, obcaecati similique nihil cumque ducimus et alias modi sunt commodi deleniti! Esse, eligendi explicabo ratione nostrum modi vero suscipit cupiditate repudiandae.
+
+
+Menú:
+<a href="#elm1">Elemento 1</a>
+<a href="#elm2">Elemento 2</a>
+<a href="#elm3">Elemento 3</a>
+<a href="#elm">Elemento 4</a>
+
+<br></br>
+
+{% for row in tabla %}
+
+	{% if loop.index == 1 %}<strong>
+
+		{% for cell in row  %}
+			<span>{{ cell }}</span>
+		{% endfor %}</strong>
+
+	{% else %}
+		
+		{% for cell in row  %}
+			<span>{{ cell }}</span>
+		{% endfor %}
+		
+	{% endif %}
+	
+	<br></br>
+	
+{% endfor %}
+
+<div id="grafico"></div>
+
+<script>
+	var datos = {% autoescape false %}{{ tabla }}{% endautoescape %};
+</script>
