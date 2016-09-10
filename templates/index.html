@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ejercico de examen</title>
+</head>
+<body>
 Título del proyecto:
 
 Introducción: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, obcaecati similique nihil cumque ducimus et alias modi sunt commodi deleniti! Esse, eligendi explicabo ratione nostrum modi vero suscipit cupiditate repudiandae.
@@ -13,12 +19,12 @@ Menú:
 <table>
 {% for row in tabla %}
 
-	{% if loop.index == 1 %}<strong>
+	{% if loop.index == 1 %}
  <thead>
     <tr>
 		{% for cell in row  %}
 			<th>{{ cell }}</th>
-		{% endfor %}</strong>
+		{% endfor %}
 </tr>
 </thead>
 	{% else %}
@@ -38,3 +44,5 @@ Menú:
 <script>
 	var datos = {% autoescape false %}{{ tabla }}{% endautoescape %};
 </script>
+</body>
+</html>
