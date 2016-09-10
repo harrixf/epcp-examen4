@@ -29,6 +29,21 @@ script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></s
         chart.draw(data, options);
       }
     </script>
+    <script type="text/javascript">
+$(document).ready(function() {
+   // Muestra y oculta los menús
+   $('ul li:has(ul)').hover(
+      function(e)
+      {
+         $(this).find('ul').css({display: "block"});
+      },
+      function(e)
+      {
+         $(this).find('ul').css({display: "none"});
+      }
+   );
+});
+</script>
 <style type="text/css">
 ul{
 list-style: none;
@@ -42,8 +57,8 @@ list-style: none;
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, obcaecati similique nihil cumque ducimus et alias modi sunt commodi deleniti! Esse, eligendi explicabo ratione nostrum modi vero suscipit cupiditate repudiandae.</p>
 
 <ul>
-<li id="clickme">Menú:
-<ul id="book">
+<li>Menú:
+<ul>
 <li><a href="#elm1">Elemento 1</a></li>
 <li><a href="#elm2">Elemento 2</a></li>
 <li><a href="#elm3">Elemento 3</a></li>
