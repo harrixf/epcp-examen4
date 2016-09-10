@@ -10,7 +10,7 @@ Menú:
 <a href="#elm">Elemento 4</a>
 
 <br></br>
-
+<table>
 {% for row in tabla %}
 
 	{% if loop.index == 1 %}<strong>
@@ -22,7 +22,7 @@ Menú:
 	{% else %}
 		
 		{% for cell in row  %}
-			<span>{{ cell }}</span>
+			<td>{{ cell }}</td>
 		{% endfor %}
 		
 	{% endif %}
@@ -30,7 +30,7 @@ Menú:
 	<br></br>
 	
 {% endfor %}
-
+</table>
 <div id="grafico"></div>
 
 <script>
