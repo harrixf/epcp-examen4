@@ -2,6 +2,23 @@
 <html>
 <head>
 <title>Ejercico de examen</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+   // Muestra y oculta los menús
+   $('ul li:has(ul)').hover(
+      function(e)
+      {
+         $(this).find('ul').css({display: "block"});
+      },
+      function(e)
+      {
+         $(this).find('ul').css({display: "none"});
+      }
+   );
+});
+</script>
+
 </head>
 <body>
 <h1>Título del proyecto:</h1>
