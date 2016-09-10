@@ -14,20 +14,22 @@ Menú:
 {% for row in tabla %}
 
 	{% if loop.index == 1 %}<strong>
-
+ <thead>
+    <tr>
 		{% for cell in row  %}
-			<span>{{ cell }}</span>
+			<th>{{ cell }}</th>
 		{% endfor %}</strong>
-
+</tr>
+</thead>
 	{% else %}
-		
+<tbody>
+<tr>
 		{% for cell in row  %}
 			<td>{{ cell }}</td>
 		{% endfor %}
-		
+</tr>
+</tbody>		
 	{% endif %}
-	
-	<br></br>
 	
 {% endfor %}
 </table>
