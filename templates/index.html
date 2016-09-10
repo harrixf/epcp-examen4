@@ -4,21 +4,31 @@
 <meta charset="UTF-8">
 <title>Ejercico de examen</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-   // Muestra y oculta los menús
-   $('ul li:has(ul)').hover(
-      function(e)
-      {
-         $(this).find('ul').css({display: "block"});
-      },
-      function(e)
-      {
-         $(this).find('ul').css({display: "none"});
+script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540]
+        ]);
+
+        var options = {
+          title: '',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('grafico'));
+
+        chart.draw(data, options);
       }
-   );
-});
-</script>
+    </script>
 <style type="text/css">
 ul{
 list-style: none;
@@ -32,14 +42,16 @@ list-style: none;
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, obcaecati similique nihil cumque ducimus et alias modi sunt commodi deleniti! Esse, eligendi explicabo ratione nostrum modi vero suscipit cupiditate repudiandae.</p>
 
 <ul>
-<li>Menú:
-<ul>
+<li id="clickme">Menú:
+<ul id="book">
 <li><a href="#elm1">Elemento 1</a></li>
 <li><a href="#elm2">Elemento 2</a></li>
 <li><a href="#elm3">Elemento 3</a></li>
 <li><a href="#elm">Elemento 4</a></li>
 </li>
 </ul>
+
+
 <br>
 <br>
 <table>
